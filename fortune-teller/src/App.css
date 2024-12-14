@@ -1,0 +1,319 @@
+/* frontend/src/App.css */
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #612bc5;
+}
+
+.app {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+h1, p {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 3rem;
+  color: #8b5cf6;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.title {
+  font-size: 4rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
+}
+
+.description {
+  font-size: 1.5rem;
+  color: #ddd;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.reveal-button {
+  margin-top: 40px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #8b5cf6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  bottom: 10px;
+}
+
+.reveal-button:hover {
+  background-color: #653db4;
+}
+
+.fortune {
+  font-size: 1.5rem;
+  color: #f8f9fa;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  margin: 40px auto 0;
+}
+
+.background {
+  background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
+  border: none;
+  border-radius: 20px;
+  width: 1100px;
+  height: 460px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bubble {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: bubble 5s infinite;
+  opacity: 0;
+}
+
+/* Bubble size variations and animations */
+.bubble:nth-child(1) {
+  width: 60px;
+  height: 60px;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  animation-duration: 7s;
+  animation-delay: 4s;
+}
+
+.bubble:nth-child(5) {
+  width: 140px;
+  height: 140px;
+  animation-duration: 9s;
+  animation-delay: 5s;
+}
+
+/* Keyframes for bubble animation with random X and Y movement */
+@keyframes bubble {
+  0% {
+    transform: translateY(100vh) translateX(calc(100vw * var(--random-x)));
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-100vh) translateX(calc(100vw * var(--random-x)));
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(calc(100vw * var(--random-x)));
+    opacity: 0;
+  }
+}
+
+/* Media Queries for Responsiveness */
+
+/* For small devices (mobiles in portrait mode) */
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .reveal-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .fortune {
+    font-size: 1.2rem;
+    width: 90%;
+  }
+
+  .background {
+    width: 100%;
+    height: 300px;
+  }
+
+  .bubble:nth-child(1) {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bubble:nth-child(2) {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bubble:nth-child(3) {
+    width: 80px;
+    height: 80px;
+  }
+
+  .bubble:nth-child(4) {
+    width: 100px;
+    height: 100px;
+  }
+
+  .bubble:nth-child(5) {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* For tablets and larger devices */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .reveal-button {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+
+  .fortune {
+    font-size: 1.3rem;
+    width: 85%;
+  }
+
+  .background {
+    width: 90%;
+    height: 350px;
+  }
+
+  .bubble:nth-child(1) {
+    width: 50px;
+    height: 50px;
+  }
+
+  .bubble:nth-child(2) {
+    width: 70px;
+    height: 70px;
+  }
+
+  .bubble:nth-child(3) {
+    width: 90px;
+    height: 90px;
+  }
+
+  .bubble:nth-child(4) {
+    width: 110px;
+    height: 110px;
+  }
+
+  .bubble:nth-child(5) {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* For large devices (laptops and desktops) */
+@media screen and (min-width: 769px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .reveal-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+  }
+
+  .fortune {
+    font-size: 1.5rem;
+    width: 80%;
+  }
+
+  .background {
+    width: 1100px;
+    height: 460px;
+  }
+
+  .bubble:nth-child(1) {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bubble:nth-child(2) {
+    width: 80px;
+    height: 80px;
+  }
+
+  .bubble:nth-child(3) {
+    width: 100px;
+    height: 100px;
+  }
+
+  .bubble:nth-child(4) {
+    width: 120px;
+    height: 120px;
+  }
+
+  .bubble:nth-child(5) {
+    width: 140px;
+    height: 140px;
+  }
+}
